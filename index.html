@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jumping Game with Teachable Machine</title>
+  <title>Gesture based Jumping Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -12,7 +12,27 @@
 <script type="text/javascript" src="teachableMachine.js"></script>
 
 <body>
-  <h1 class="flex-container">Teachable Machine - Jump Game</h1>
+  <h1 class="flex-container">Gesture based Jumping Game</h1>
+  <div class="instructions flex-container">
+    <h3>How to Play:</h3>
+    <ul>
+      <li><strong>Start Camera:</strong> Click <em>Start Model</em> to enable pose detection.</li>
+      <li><strong>Test Poses:</strong>
+        <ul>
+          <li><strong>Jump:</strong> Raise both hands upright.</li>
+          <li><strong>Duck:</strong> Raise both hands to shoulder level.</li>
+        </ul>
+      </li>
+      <li><strong>Play Game:</strong> Click <em>Play Game</em> after testing poses.</li>
+      <li>During the game:
+        <ul>
+          <li><strong>Ground Obstacle:</strong> Jump by raising both hands upright.</li>
+          <li><strong>Flying Obstacle:</strong> Duck by raising both hands to shoulder level.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>For reference, watch the <a href="#" id="gameRecording">Game Play Recording</a>.</p>
+  </div>
   <div class="parent-container">
     <div class="video-container">
       <canvas id="poseCanvas" width="360" height="360" autoplay></canvas>

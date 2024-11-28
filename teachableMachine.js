@@ -1,4 +1,4 @@
-const URL = 'https://teachablemachine.withgoogle.com/models/LJnx4yCAB/';
+const MODEL_URL = 'https://teachablemachine.withgoogle.com/models/LJnx4yCAB/';
 let model, webcam, ctxPose, labelContainer, maxPredictions;
 let startModelBtn;
 
@@ -6,8 +6,8 @@ async function init() {
     // hide start model button
     startModelBtn = document.getElementById("startModelBtn");
 
-    const modelURL = URL + 'model.json';
-    const metadataURL = URL + 'metadata.json';
+    const modelURL = MODEL_URL + 'model.json';
+    const metadataURL = MODEL_URL + 'metadata.json';
 
     // load the model and metadata
     // Refer to tmPose.loadFromFiles() in the API to support files from a file picker
@@ -41,9 +41,10 @@ async function loop(timestamp) {
 }
 
 async function predict() {
-    // Prediction #1: run input through posenet
+    // Prediction 1: run input through posenet
     // estimatePose can take in an image, video or canvas html element
     const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
+    
     // Prediction 2: run input through teachable machine classification model
     const predictions = await model.predict(posenetOutput);
 
