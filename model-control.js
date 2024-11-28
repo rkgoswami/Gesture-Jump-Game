@@ -2,12 +2,14 @@
 const modal = document.getElementById('modal');
 const gameRecordingLink = document.getElementById('gameRecording');
 const closeModal = document.getElementById('closeModal');
+const video = document.getElementById('gamePlayVideo');
 
 // Show modal when "Game Play Recording" is clicked
 gameRecordingLink.addEventListener('click', (e) => {
   e.preventDefault();
-  modal.style.display = 'block';
-  const video = document.getElementById('gamePlayVideo');
+  modal.style.display = 'flex';
+  //const video = document.getElementById('gamePlayVideo');
+  video.load();
   video.currentTime = 0; // Reset video to start
   video.play(); // Play video
 });
@@ -15,7 +17,6 @@ gameRecordingLink.addEventListener('click', (e) => {
 // Hide modal when close button is clicked
 closeModal.addEventListener('click', () => {
   modal.style.display = 'none';
-  const video = document.getElementById('gamePlayVideo');
   video.pause(); // Pause video
 });
 
@@ -23,7 +24,6 @@ closeModal.addEventListener('click', () => {
 window.addEventListener('click', (e) => {
   if (e.target === modal) {
     modal.style.display = 'none';
-    const video = document.getElementById('gamePlayVideo');
     video.pause(); // Pause video
   }
 });
