@@ -31,8 +31,20 @@
         </ul>
       </li>
     </ul>
-    <p>For reference, watch the <a href="#" id="gameRecording">Game Play Recording</a>.</p>
+    <p>For reference, watch the <a href="#" id="gameRecording">Game Play Recording</a></p>
   </div>
+  
+  <!-- Modal for Game Play Recording -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <video controls id="gamePlayVideo" width="100%">
+        <source src="./screenshots/game-play.mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
   <div class="parent-container">
     <div class="video-container">
       <canvas id="poseCanvas" width="360" height="360" autoplay></canvas>
@@ -50,5 +62,6 @@
     </div>
   </div>
   <script src="game.js"></script>
+  <script src="model-control.js"></script>
 </body>
 </html>
